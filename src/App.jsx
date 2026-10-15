@@ -24,6 +24,8 @@ import GalleryPage from './pages/Gallery'
 
 
 import { Toaster } from "react-hot-toast";
+import ProtectedRoute from './components/ProtectedRoute'
+import Contact from './pages/Contact'
 
 
 
@@ -58,22 +60,25 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/eventspage" element={<EventsPage />} />
         <Route path="/gallerypage" element={<GalleryPage />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact/>} />
 
-        <Route path="/my-mickeys" element={<MyMickeysLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="orders/:id" element={<OrderDetail />} />
-          <Route path="favorites" element={<Favorites />} />
-          <Route path="loyalty" element={<Loyalty />} />
-          <Route path="rewards" element={<Rewards />} />
-          <Route path="gift-cards" element={<GiftCards />} />
-          <Route path="events" element={<Events />} />
-          <Route path="offers" element={<Offers />} />
-          <Route path="settings" element={<Settings />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/my-mickeys" element={<MyMickeysLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="orders/:id" element={<OrderDetail />} />
+            <Route path="favorites" element={<Favorites />} />
+            <Route path="loyalty" element={<Loyalty />} />
+            <Route path="rewards" element={<Rewards />} />
+            <Route path="gift-cards" element={<GiftCards />} />
+            <Route path="events" element={<Events />} />
+            <Route path="offers" element={<Offers />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
         </Route>
-      </Routes>
+
+      </Routes >
 
     </>
   )

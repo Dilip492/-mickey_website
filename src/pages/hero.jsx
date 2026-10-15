@@ -6,6 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/footer';
 import { Link } from 'react-router-dom';
 import Newsletter from '../components/Newsletter';
+import RewardsSection from '../components/RewardsSection';
+import EventsSection from '../components/EventsSection';
 
 const Hero = () => {
   const badgeRef = useRef(null);
@@ -149,10 +151,10 @@ const Hero = () => {
             </div> */}
           </section>
 
-          
+
         </div>
 
-              
+
 
         {/* Our Story Section */}
         {/* <section className="story-section" id="about">
@@ -285,9 +287,16 @@ const Hero = () => {
 
         <Gallery />
 
+        <RewardsSection />
+
+        <EventsSection />
+
+
         <InstagramSection />
 
-        {/* <Newsletter/> */}
+
+
+        <Newsletter/>
 
       </main>
 

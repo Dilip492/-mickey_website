@@ -13,6 +13,11 @@
   --color-roast-dark: #1b0c07;
   --color-roast-light: #3d1f14;
 
+  --color-dusty-plumb: #441d28;
+  --color-copper-cup: #9b562e;
+  --color-mellow-yellow: #e7b25a;
+  --color-theme-cream: #f1dbc2;
+
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-display: "Fredoka", "Plus Jakarta Sans", sans-serif;
   --font-serif: "Fraunces", serif;
@@ -183,7 +188,7 @@ body {
   .header-responsive {
     padding: 2rem 3rem 1rem;
   }
-  
+
 }
 
 @media (min-width: 768px) {
@@ -628,7 +633,7 @@ body {
 
   }
 
-  .glass-image{
+  .glass-image {
     height: 400px;
   }
 

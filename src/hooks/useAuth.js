@@ -1,7 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-// import { loginApi, RegisterApi } from "../api/authapi";
+
 import { loginApi, RegisterApi } from "../api/authapi";
-// import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../context/AuthContext";
+
+
+
+
 
 
 
@@ -13,9 +17,15 @@ const useAuth = () => {
     // const setUser = useAuthStore(
     //     (state) => state.setUser
     // );
+
+    const { setUser } = useAuthContext();
     const loginMutation = useMutation({
         mutationFn: loginApi,
         onSuccess: (data) => {
+
+            if (data?.success && data?.user) {
+                setUser(data.user);
+            }
             // console.log("Login Success", data);
             // authStore.setUser(data.user);
 
@@ -30,6 +40,9 @@ const useAuth = () => {
     const RegisterMutation = useMutation({
         mutationFn: RegisterApi,
         onSuccess: (data) => {
+            if (data?.success && data?.user) {
+                setUser(data.user);
+            }
             // console.log("register Success", data);
             // authStore.setUser(data.user);
 

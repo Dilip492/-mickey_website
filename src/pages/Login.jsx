@@ -70,20 +70,31 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await login(formData)
+      const response = await login({
+        email,
+        password,
+      })
 
       // const data = await response.json();
-      
-        // if (!response.ok) {
-        //   throw new Error(
-        //     error?.response?.data?.message || "Invalid email or password."
-        //   );
-        // }
+
+      // if (!response.ok) {
+      //   throw new Error(
+      //     error?.response?.data?.message || "Invalid email or password."
+      //   );
+      // }
+      console.log("Login response:", response);
+      console.log("Authenticated user:", response.user);
+
 
       toast.success("Login successful!");
 
+
+
       // Login successful
-      navigate("/my-mickeys");
+      // navigate("/my-mickeys");
+      if (response.success && response.user) {
+        navigate("/my-mickeys", { replace: true });
+      }
     } catch (error) {
       // setError(
       //   error?.message ||
