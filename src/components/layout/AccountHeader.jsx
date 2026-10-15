@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Bell, Search } from "lucide-react";
 // import Logo from "../brand/Logo.jsx";
 import ProfileAvatar from "../ui/ProfileAvatar.jsx";
-import { mockCustomer } from "../../data/mockData.js";
+// import { mockCustomer } from "../../data/mockData.js";
 
 export default function AccountHeader() {
   return (
